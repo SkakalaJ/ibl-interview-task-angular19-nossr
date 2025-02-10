@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ibl-interview-task-angular
+    ports:
+      - "4200:4200"
+    environment:
+      - NODE_ENV=production
+      - OGCIE_IBLSOFT_HOST_URL=https://ogcie.iblsoft.com
