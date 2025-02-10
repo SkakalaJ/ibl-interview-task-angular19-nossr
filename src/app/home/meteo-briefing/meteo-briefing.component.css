@@ -1,0 +1,10 @@
+.error-message {
+  color: red;
+}
+
+.message {
+  max-width: 450px;
+  display: block;
+  margin: auto;
+  text-align: center;
+}

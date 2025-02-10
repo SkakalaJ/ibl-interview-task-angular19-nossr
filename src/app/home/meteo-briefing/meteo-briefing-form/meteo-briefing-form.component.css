@@ -1,0 +1,52 @@
+mat-label {
+  color: gray;
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+mat-hint {
+  color: orange;
+}
+
+.mat-focused mat-label {
+  color: #2070C4;
+}
+
+mat-form-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  background-color: white;
+  font: inherit;
+  /* --mat-form-field-container-height: 40px;
+  --mat-form-field-container-vertical-padding: 8px; */
+}
+
+mat-form-field input {
+  text-transform: uppercase;
+}
+
+mat-form-field ::ng-deep > :not(:first-child),
+mat-card {
+  background-color: aliceblue;
+}
+
+mat-card {
+  color: rgba(0, 0, 0, 0.87);
+  border-radius: 4px;
+  box-shadow: var(--Paper-shadow);
+  background-image: var(--Paper-overlay);
+  overflow: hidden;
+  padding: 32px;
+  margin: 32px auto;
+  box-sizing: border-box;
+  min-width: 387px;
+  max-width: 450px;
+  border-radius: 20px;
+  box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 5px 8px 0px rgba(0, 0, 0, 0.14), 0px 1px 14px 0px rgba(0, 0, 0, 0.12);
+}
+
+mat-card-content {
+  min-width: 387px;
+}

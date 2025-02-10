@@ -1,0 +1,40 @@
+tr:first-child th:first-child { border-top-left-radius: var(--mdc-elevated-card-container-shape, var(--mat-sys-corner-medium)); }
+tr:first-child th:last-child { border-top-right-radius: var(--mdc-elevated-card-container-shape, var(--mat-sys-corner-medium)); }
+
+tr:last-child td:first-child { border-bottom-left-radius: var(--mdc-elevated-card-container-shape, var(--mat-sys-corner-medium)); }
+tr:last-child td:last-child { border-bottom-right-radius: var(--mdc-elevated-card-container-shape, var(--mat-sys-corner-medium)); }
+
+tr th { background-color: #f9e096 }
+tr td { background-color: #ffffdd }
+
+tr th, tr td { 
+  text-align: left; 
+}
+
+tr td:first-child {
+  width: 10%;
+  min-width: 50px; 
+}
+
+tr td:nth-child(2) {
+  width: 20%;
+  min-width: 80px;
+}
+
+tr td:last-child { 
+  width: 80%;
+}
+
+tr th:first-child { 
+  width: 10%;
+  min-width: 50px; 
+}
+
+tr th:nth-child(2) {
+  width: 20%;
+  min-width: 80px;
+}
+
+tr th:last-child { 
+  width: 80%;
+}

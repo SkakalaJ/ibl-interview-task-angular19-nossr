@@ -1,0 +1,50 @@
+<mat-card>
+  <mat-card-content fxLayout="column" fxLayoutGap="1rem" style="display: flex; flex-direction: column; width: 100%; box-sizing: border-box;">
+    <form [formGroup]="briefingForm" (ngSubmit)="onSubmit()" style="width: 100%;">
+      <div style="display: flex; flex-direction: column; margin-bottom: 20px;">
+        <div style="display: flex; flex-direction: row; align-items: center;">
+          <div *ngFor="let reportType of reportTypes; let i = index" style="margin-right: 10px;">
+            <mat-checkbox (change)="onCheckboxChange($event)" [value]="reportType" [checked]="i === 0">
+              {{reportType}}
+            </mat-checkbox>
+          </div>
+        </div>
+        <mat-error *ngIf="briefingForm.get('reportTypes')?.hasError('customError')" style="scale: 0.75; margin-right: auto;">
+          {{ briefingForm.get('reportTypes')?.getError('customError') }}
+        </mat-error>  
+      </div>
+
+      <mat-form-field subscriptSizing="dynamic" appearance="outline" fxFlex="100%" style="width: 100%;">
+        <mat-label>Airports</mat-label>
+        <input matInput formControlName="airports" [errorStateMatcher]="matcher"/>
+        <mat-error *ngIf="briefingForm.get('airports')?.hasError('customError')">
+          {{ 
+            briefingForm.get('airports')?.getError('customError')
+          }}
+        </mat-error>
+        <mat-hint *ngIf="showAirportsHint">{{ showAirportsHint }}</mat-hint>
+      </mat-form-field>
+
+      <mat-form-field subscriptSizing="dynamic" appearance="outline" fxFlex="100%" style="width: 100%;">
+        <mat-label>Countries</mat-label>
+        <input matInput formControlName="countries" [errorStateMatcher]="matcher"/>
+        <mat-error *ngIf="briefingForm.get('countries')?.hasError('customError')">
+          {{ 
+            briefingForm.get('countries')?.getError('customError')
+          }}
+        </mat-error>
+        <mat-hint *ngIf="showCountriesHint">{{ showCountriesHint }}</mat-hint>
+      </mat-form-field>
+
+      <button mat-fab extended [disabled]="isSubmitDisabled" style="float: right;">
+        <!-- <span>CREATE BRIEFING</span>
+        <mat-icon iconPositionEnd *ngIf="loading">airplanemode_on</mat-icon> -->
+        <span style="display: flex; align-items: center;">
+          <span>CREATE BRIEFING</span>
+          <mat-spinner diameter="20" *ngIf="loading" style="margin-left: 12px; margin-right: -4px;"></mat-spinner>
+          <mat-icon *ngIf="!loading" style="margin-left: 12px; margin-right: -8px;">airplanemode_on</mat-icon>
+        </span>
+      </button>
+    </form>
+  </mat-card-content>
+</mat-card>

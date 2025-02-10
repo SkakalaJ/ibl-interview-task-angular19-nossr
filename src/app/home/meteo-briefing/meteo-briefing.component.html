@@ -1,0 +1,16 @@
+<div>
+  <meteo-briefing-form (onSubmitValues)="newSubmittedValues($event)" [loading]="fetching"/>
+  <span *ngIf="errorMessage" class="error-message message">{{errorMessage}}</span>
+
+  <span *ngIf="getFormattedResponseData.length === 0 && wasFetched === true && !errorMessage" class="message" style="color: gray;">No results found.</span>
+
+  <div>
+    <mat-card *ngFor="let tableData of getFormattedResponseData; let i = index" style="margin-top: 20px;">
+      <mat-card-content fxLayout="column" fxLayoutGap="1rem" style="display: flex; flex-direction: column; width: 100%; box-sizing: border-box; padding: 0;">
+        <meteo-briefing-table [data]="tableData"/>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+
+
